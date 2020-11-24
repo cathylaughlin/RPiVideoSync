@@ -6,11 +6,11 @@ get the stock 'Raspbian / Raspberry Pi OS with desktop'
 
 use the desktop to set up wifi for both Pis. make sure the IP address stays the same for both (either use a static IP or DHCP reservations)
 
-ensure python3 is installed
+ensure python3 and omxplayer are installed (they come by default)
 
-pip install python-osc
+pip3 install python-osc
 
-pip install omxplayer
+pip3 install omxplayer-wrapper
 
 sudo raspi-config, set your Pi to boot to the command line (so the desktop won't show behind the videos) and, optionally, auto-login
 
