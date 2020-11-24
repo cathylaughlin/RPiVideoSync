@@ -31,3 +31,5 @@ OR
 @reboot full/path/to/RPiVideoSync -s --ip=192.168.y.y 
 
 use the json file created the first time you run it to change settings / control how omxplayer starts (aspect mode, audio outputs, etc)
+
+how it works: uses OSC to coordinate near-identical start times for two (identical) videos. re-syncs after every N playthroughs (you can set N to your desired number of playthroughs using the JSON file). for best results, put .5 seconds of black screen at the start and end of your video. 
