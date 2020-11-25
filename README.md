@@ -14,21 +14,23 @@ pip3 install omxplayer-wrapper
 
 sudo raspi-config, set your Pi to boot to the command line (so the desktop won't show behind the videos) and, optionally, auto-login
 
+also in raspi-config: advanced settings->memory split, set your GPU memory to at least 128! otherwise omxplayer will be sad
+
 to run:
 
-(the manager, on 192.168.y.y): ./RPiVideoSync -m --ip=192.168.x.x 
+(the manager, on 192.168.y.y): ./RPiVideoSync -m --ip=192.168.x.x --filename=test.mp4
 
-(the subordinate, on 192.168.x.x): ./RPiVideoSync -s --ip=192.168.y.y 
+(the subordinate, on 192.168.x.x): ./RPiVideoSync -s --ip=192.168.y.y --filename=test.mp4
 
 to run forever:
 
 sudo crontab -e
 
-@reboot full/path/to/RPiVideoSync -m --ip=192.168.x.x
+@reboot full/path/to/RPiVideoSync -m --ip=192.168.x.x --filename=test.mp4
 
 OR
 
-@reboot full/path/to/RPiVideoSync -s --ip=192.168.y.y 
+@reboot full/path/to/RPiVideoSync -s --ip=192.168.y.y --filename=test.mp4
 
 use the json file created the first time you run it to change settings / control how omxplayer starts (aspect mode, audio outputs, etc)
 
