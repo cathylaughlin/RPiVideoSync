@@ -18,9 +18,9 @@ sudo raspi-config, set your Pi to boot to the command line (so the desktop won't
 
 to run the sync (ensure both video files are exactly the same):
 
-(the manager, on 192.168.y.y): ./RPiVideoSync -m --ip=192.168.x.x --filename=test.mp4
+(the sync manager, on 192.168.y.y): ./RPiVideoSync -m --ip=192.168.x.x --filename=test.mp4
 
-(the subordinate, on 192.168.x.x): ./RPiVideoSync -s --ip=192.168.y.y --filename=test.mp4
+(the sync subordinate, on 192.168.x.x): ./RPiVideoSync -s --ip=192.168.y.y --filename=test.mp4
 
 to set it up to run at reboot forever:
 
