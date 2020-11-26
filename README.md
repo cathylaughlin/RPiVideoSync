@@ -16,6 +16,8 @@ pip3 install omxplayer-wrapper
 
 run 'sudo raspi-config'. optionally set your Pi to boot to the command line (so the desktop won't show behind the videos). also optionally, set it to auto-login. I also set it to 'wait for network to boot', since the script needs the network to function. 
 
+also, go to 'interfacing options' and turn on ssh, so you can remote into your Pis while the video is playing. otherwise (in a pinch!) you can try blind-typing 'killall omxplayer' or 'pkill omxplayer' into the console...
+
 **also in raspi-config but NOT optional: advanced settings->memory split, set your GPU memory to at least 128! otherwise omxplayer will be sad**
 
 to run the sync (ensure both video files are exactly the same):
