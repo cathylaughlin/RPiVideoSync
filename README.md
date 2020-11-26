@@ -22,9 +22,7 @@ to run the sync (ensure both video files are exactly the same):
 
 (the sync subordinate, on 192.168.x.x): ./RPiVideoSync -s --ip=192.168.y.y --filename=test.mp4
 
-to set it up to run at reboot forever:
-
-'sudo crontab -e' on both machines. the line you'll type in is:
+to set it up to run at reboot forever, run 'crontab -e' on both machines. the line you'll type in is:
 
 @reboot sleep 10;/full/path/to/RPiVideoSync -m --ip=192.168.x.x --filename=test.mp4
 
