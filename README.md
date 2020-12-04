@@ -22,13 +22,15 @@ also, go to 'interfacing options' and turn on ssh (you probably also want to cha
 
 to run the sync (ensure both video files are exactly the same):
 
-(the sync manager, on 192.168.y.y): ./RPiVideoSync -m --ip=192.168.x.x --filename=test.mp4
+make sure you have run 'chmod 755 ./RPiVideoSync.py' from the same directory. then run:
 
-(the sync subordinate, on 192.168.x.x): ./RPiVideoSync -s --ip=192.168.y.y --filename=test.mp4
+(the sync manager, on 192.168.y.y): ./RPiVideoSync.py -m --ip=192.168.x.x --filename=test.mp4
+
+(the sync subordinate, on 192.168.x.x): ./RPiVideoSync.py -s --ip=192.168.y.y --filename=test.mp4
 
 to set it up to run at reboot when you plug in the Pis, run 'crontab -e' on both machines. the line you'll type in is:
 
-@reboot sleep 10;/full/path/to/RPiVideoSync -m --ip=192.168.x.x --filename=test.mp4
+@reboot sleep 10;/full/path/to/RPiVideoSync.py -m --ip=192.168.x.x --filename=test.mp4
 
 OR
 
