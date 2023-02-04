@@ -17,6 +17,7 @@ pip3 install omxplayer-wrapper
 ( if the install fails for omxplayer-wrapper, you may need to install a few more packages before trying again: 
 
 sudo apt-get install libglib2.0-dev
+
 sudo apt-get install libdbus-1-dev )
 
 run 'sudo raspi-config'. optionally set your Pi to boot to the command line (so the desktop won't show behind the videos). also optionally, set it to auto-login. I also set it to 'wait for network to boot', since the script needs the network to function. 
