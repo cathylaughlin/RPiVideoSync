@@ -2,7 +2,7 @@
 quick script to (semi-)sync two videos via wifi on two Raspberry Pis (via omxplayer-wrapper)  
 
 to install: 
-get the stock 'Raspbian / Raspberry Pi OS with desktop' and install it on two different Pis. After it booted I just skipped all the updates, ymmv...
+get the stock 'Raspbian / Raspberry Pi OS with desktop'. Note that for a Pi 4, you should get the 'legacy/Buster' image, since the current version of Raspberry Pi OS no longer supports OMXPlayer. Install your OS on two different Pis. After it booted I just skipped all the updates, ymmv...
 
 use the desktop to connect to a wifi network (preferably the same network / router you'll be deploying with!) on both Pis. make sure the IP address stays the same for both Pis (either use a static IP by editing /etc/dhcpcd.conf, or set up DHCP reservations on your router)
 
