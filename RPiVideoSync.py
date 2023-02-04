@@ -44,8 +44,10 @@ from pythonosc import osc_server
 
 audio_output = 'local' # holds the current audio output mode
 aspect_mode = 'fill' # holds the current display mode
+orientation = 0
 AUDIO_OUTPUT = 'AudioOutput'
 ASPECT_MODE = 'AspectMode'
+ORIENTATION = 'Orientation'
 
 player = None # holds omxplayer-wrapper's player object
 logger = None # logs stuff
@@ -129,11 +131,13 @@ def read_json():
   global current_vol
   global audio_output
   global aspect_mode
+  global orientation
   try:
     with open(SETTINGS_FILE) as json_file:
       data = json.load(json_file)
       audio_output = data[AUDIO_OUTPUT]
       aspect_mode = data[ASPECT_MODE]
+      orientation = data[ORIENTATION]
       validate_audio_output()
       validate_aspect_mode()
   except Exception as e:
@@ -151,7 +155,8 @@ def write_json():
     new_json = {}
     new_json[AUDIO_OUTPUT] = audio_output
     new_json[ASPECT_MODE] = aspect_mode
-    logger.info ("saving audio output %s aspect mode %s " % (audio_output, aspect_mode))
+    new_json[ORIENTATION] = orientation
+    logger.info ("saving audio output %s aspect mode %s orientation %s " % (audio_output, aspect_mode, orientation))
     with open(SETTINGS_FILE, 'w') as outfile:
       json.dump(new_json, outfile)
       
@@ -272,11 +277,11 @@ def load_omxplayer():
 
       #creates OMXPlayer-wrapper with filename and options
       player = OMXPlayer(filepath, args=['--loop', '--no-osd', '--aspect-mode', aspect_mode, '-o',
-                                         audio_output],
+                                         audio_output, '--orientation', orientation],
                          dbus_name='org.mpris.MediaPlayer2.omxplayer1')
       
       logger.info([filepath, '--loop', '--no-osd', '--aspect-mode', aspect_mode, '-o',
-                                         audio_output])
+                                         audio_output, '--orientation', orientation])
 
       # exit handling
       player.exitEvent += lambda _, exit_code: onOMXPlayerExit(exit_code)
