@@ -24,7 +24,7 @@ run 'sudo raspi-config'. optionally set your Pi to boot to the command line (so 
 
 also, go to 'interfacing options' and turn on ssh (you probably also want to change the default password for the pi account!) this allows you to remote into your Pis while the videos are playing. otherwise (in a pinch!) you can try blind-typing 'killall omxplayer' or 'pkill omxplayer' into the console...
 
-**also in raspi-config but NOT optional: advanced settings->memory split, set your GPU memory to at least 128! otherwise omxplayer will be sad**
+**Raspberry Pi 3 only: also in raspi-config but NOT optional: advanced settings->memory split, set your GPU memory to at least 128! otherwise omxplayer will be sad. the Pi 4 auto-allocates video memory, so there's no need to change this setting on a Pi 4.**
 
 to run the sync (ensure both video files are exactly the same):
 
