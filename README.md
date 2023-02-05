@@ -26,7 +26,7 @@ also, go to 'interfacing options' and turn on ssh (you probably also want to cha
 
 **Raspberry Pi 3 only: also in raspi-config but NOT optional: advanced settings->memory split, set your GPU memory to at least 128! otherwise omxplayer will be sad. the Pi 4 auto-allocates video memory, so there's no need to change this setting on a Pi 4.**
 
-to run the sync (ensure both video files are exactly the same):
+to run the sync (ensure both video files are the same duration):
 
 make sure you have run 'chmod 755 ./RPiVideoSync.py' from the same directory. then run:
 
@@ -46,4 +46,4 @@ OR
 
 you can edit the json file (created in the same directory the first time you run it) to change settings / control how omxplayer starts, if you want to (options include aspect mode & audio outputs)
 
-how it works: uses OSC to coordinate near-identical start times for two (identical) videos. add to crontab as above and it'll work on powerup with no human interaction. for best results, put at least ~.5 seconds of black screen at the start and end of your video!
+how it works: uses OSC to coordinate near-identical start times for two (near-identical-duration) videos. add to crontab as above and it'll work on powerup with no human interaction. for best results, put at least ~.5 seconds of black screen at the start and end of your video!
